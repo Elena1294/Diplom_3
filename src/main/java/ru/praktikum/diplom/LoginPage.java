@@ -30,9 +30,9 @@ public class LoginPage extends MyValues{
         String textOfRestorePasswordButton = driver.findElement(restorePasswordButton).getText();
         MatcherAssert.assertThat(textOfRestorePasswordButton, startsWith("Восстановить пароль"));
     }
-    public void enterEmailAndPassword(){ //ввести почту и пароль в окне авторизации
-        driver.findElement(emailField).sendKeys(EMAIL);
-        driver.findElement(passwordField).sendKeys(PASSWORD);
+    public void enterEmailAndPassword(User user){ //ввести почту и пароль в окне авторизации
+        driver.findElement(emailField).sendKeys(user.getEmail());
+        driver.findElement(passwordField).sendKeys(user.getPassword());
     }
     public void clickSignInButton(){ // клик на кнопку Войти
         driver.findElement(signInButton).click();

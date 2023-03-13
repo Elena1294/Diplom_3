@@ -10,6 +10,17 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 public class UserClient extends MyValues {
 
+    public ValidatableResponse createUser(User user) {
+        return given().log().all()
+                .contentType(ContentType.JSON)
+                .baseUri(BASE_URI)
+                .body(user)
+                .log().all()
+                .post(ROOT + "register")
+                .then()
+                .log().all();
+    }
+
     @Step("Login user")
     public ValidatableResponse loginUser(User user) {
         return given().log().all()

@@ -1,12 +1,22 @@
 import io.qameta.allure.junit4.DisplayName;
+import io.restassured.response.ValidatableResponse;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
-import ru.praktikum.diplom.ForgotPasswordPage;
-import ru.praktikum.diplom.LoginPage;
-import ru.praktikum.diplom.MainPage;
-import ru.praktikum.diplom.RegisterPage;
+import ru.praktikum.diplom.*;
 
 public class LoginTest extends BaseTest{
-
+    private User user;
+    private UserClient userClient;
+    private String accessToken;
+    private ValidatableResponse response;
+    @Before
+    public void setUp() {
+        user = User.getRandomUser();
+        response = userClient.createUser(user);
+        accessToken = response.extract().path("accessToken");
+    }
     @Test
     @DisplayName("Успешный вход через кнопку «Личный кабинет»")
     public void loginThroughPersonalAccountButton(){
@@ -14,7 +24,7 @@ public class LoginTest extends BaseTest{
         LoginPage loginPage = new LoginPage(driver);
 
         mainPage.clickAccountButton();
-        loginPage.enterEmailAndPassword();
+        loginPage.enterEmailAndPassword(user);
         loginPage.clickSignInButton();
         mainPage.checkOrderButton();
     }
@@ -26,7 +36,7 @@ public class LoginTest extends BaseTest{
         LoginPage loginPage = new LoginPage(driver);
 
         mainPage.clickSignInButton();
-        loginPage.enterEmailAndPassword();
+        loginPage.enterEmailAndPassword(user);
         loginPage.clickSignInButton();
         mainPage.checkOrderButton();
     }
@@ -41,7 +51,7 @@ public class LoginTest extends BaseTest{
         mainPage.clickSignInButton();
         loginPage.clickRestorePasswordButton();
         forgotPasswordPage.clickSignInButton();
-        loginPage.enterEmailAndPassword();
+        loginPage.enterEmailAndPassword(user);
         loginPage.clickSignInButton();
         mainPage.checkOrderButton();
     }
@@ -56,8 +66,12 @@ public class LoginTest extends BaseTest{
         mainPage.clickSignInButton();
         loginPage.clickRegisterButton();
         registerPage.clickSignInButton();
-        loginPage.enterEmailAndPassword();
+        loginPage.enterEmailAndPassword(user);
         loginPage.clickSignInButton();
         mainPage.checkOrderButton();
+    }
+    @After
+    public void clearState() {
+        userClient.deleteUser(StringUtils.substringAfter(accessToken, " "));
     }
 }
