@@ -3,12 +3,11 @@ package ru.praktikum.diplom;
 import org.hamcrest.MatcherAssert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import ru.praktikum.diplom.MyValues;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.core.StringStartsWith.startsWith;
 
-public class MainPage extends MyValues {
+public class MainPage {
 
     private final By personalAccountButton =     //кнопка "Личный кабинет":
             By.xpath(".//p[text()='Личный Кабинет']");
@@ -35,7 +34,7 @@ public class MainPage extends MyValues {
     }
 
     public void open() {         //открыть сайт
-        driver.get(BASE_URI);
+        driver.get(URLS.BASE_URI);
     }
 
     public void clickAccountButton() { //клик на кнопку Личный кабинет

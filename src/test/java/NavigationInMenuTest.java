@@ -5,17 +5,18 @@ import ru.praktikum.diplom.MainPage;
 public class NavigationInMenuTest extends BaseTest {
 
     @Test
-    @DisplayName("Работоспособность переходов к разделу:  «Соусы»")
-    public void navigationThroughMenu1() {
+    @DisplayName("Работоспособность перехода к разделу:  «Булки»")
+    public void navigationThroughMenuBuns() {
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.clickFillingsButton();
-        mainPage.checkGoToTheFillingsSection();
+        mainPage.clickSaucesButton();
+        mainPage.clickBunsButton();
+        mainPage.checkGoToTheBunsSection();
 
     }
     @Test
-    @DisplayName("Работоспособность переходов к разделу: «Соусы»")
-    public void navigationThroughMenu2() {
+    @DisplayName("Работоспособность перехода к разделу: «Соусы»")
+    public void navigationThroughMenuSauces() {
         MainPage mainPage = new MainPage(driver);
 
         mainPage.clickSaucesButton();
@@ -23,11 +24,11 @@ public class NavigationInMenuTest extends BaseTest {
 
     }
     @Test
-    @DisplayName("Работоспособность переходов к разделу: «Начинки».")
-    public void navigationThroughMenu3() {
+    @DisplayName("Работоспособность перехода к разделу: «Начинки».")
+    public void navigationThroughMenuFillings () {
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.clickBunsButton();
-        mainPage.checkGoToTheBunsSection();
+        mainPage.clickFillingsButton();
+        mainPage.checkGoToTheFillingsSection();
     }
 }

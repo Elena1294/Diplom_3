@@ -42,7 +42,7 @@ public class RegisterPage {
     }
     public void checkShortPasswordError(){ //проверка наличия сообщения об ошибке
         String textOfError = driver.findElement(shortPasswordError).getText();
-        MatcherAssert.assertThat("Вход", textOfError, startsWith("Некорректный пароль"));
+        MatcherAssert.assertThat("Некорректный пароль", textOfError, startsWith("Некорректный пароль"));
     }
     public void clickSignInButton(){
         driver.findElement(signInButton).click();

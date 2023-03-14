@@ -7,8 +7,9 @@ import static io.restassured.RestAssured.given;
 import static java.net.HttpURLConnection.HTTP_ACCEPTED;
 import static java.net.HttpURLConnection.HTTP_OK;
 import static org.hamcrest.CoreMatchers.equalTo;
+import static ru.praktikum.diplom.URLS.BASE_URI;
 
-public class UserClient extends MyValues {
+public class UserClient {
 
     public ValidatableResponse createUser(User user) {
         return given().log().all()
@@ -16,7 +17,7 @@ public class UserClient extends MyValues {
                 .baseUri(BASE_URI)
                 .body(user)
                 .log().all()
-                .post(ROOT + "register")
+                .post(URLS.ROOT + "register")
                 .then()
                 .log().all();
     }
@@ -28,7 +29,7 @@ public class UserClient extends MyValues {
                 .baseUri(BASE_URI)
                 .body(user)
                 .when()
-                .post(ROOT + "login")
+                .post(URLS.ROOT + "login")
                 .then().log().all();
     }
 
@@ -39,7 +40,7 @@ public class UserClient extends MyValues {
                 .baseUri(BASE_URI)
                 .header("Authorization", accessToken)
                 .when()
-                .delete(ROOT + "user")
+                .delete(URLS.ROOT + "user")
                 .then().log().all();
     }
 

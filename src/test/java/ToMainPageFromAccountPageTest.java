@@ -13,7 +13,7 @@ import java.time.Duration;
 
 public class ToMainPageFromAccountPageTest extends BaseTest{
     private User user;
-    private UserClient userClient;
+    public UserClient userClient;
     private String accessToken;
     private ValidatableResponse response;
 
@@ -57,8 +57,5 @@ public class ToMainPageFromAccountPageTest extends BaseTest{
         profilePage.clickConstructorButton();
         mainPage.checkOrderButton();
     }
-    @After
-    public void clearState() {
-        userClient.deleteUser(StringUtils.substringAfter(accessToken, " "));
-    }
+
 }

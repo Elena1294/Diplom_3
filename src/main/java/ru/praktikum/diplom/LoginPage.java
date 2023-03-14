@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static org.hamcrest.core.StringStartsWith.startsWith;
-public class LoginPage extends MyValues{
+public class LoginPage {
     private final By registerButton = //маленькая кнопка Зарегистрироваться внизу страницы
             By.xpath(".//a[(@class = 'Auth_link__1fOlj' and text()= 'Зарегистрироваться')]");
     private final By restorePasswordButton = //кнопка Восстановить пароль
