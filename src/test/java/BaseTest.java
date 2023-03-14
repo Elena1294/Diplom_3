@@ -16,7 +16,6 @@ public class BaseTest {
     @Before
     public void setUpChrome (){
 
-        //WebDriverManager.chromedriver().setup();
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(ops);
@@ -25,9 +24,6 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         MainPage mainPage = new MainPage(driver);
         mainPage.open();
-
-
-
     }
 
     @After

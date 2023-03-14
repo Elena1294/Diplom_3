@@ -9,9 +9,17 @@ import org.junit.Test;
 import ru.praktikum.diplom.*;
 
 
-public class PasswordErrorTest extends BaseTest{
 
-    Faker faker = new Faker();
+public class PasswordErrorTest extends BaseTest{
+    private User user;
+    private UserClient userClient;
+    private ValidatableResponse response;
+    String accessToken;
+    @Before
+    public void setUp() {
+        user = User.getRandomUser();
+        UserClient userClient = new UserClient();
+    }
 
     @Test
     @DisplayName("Отображение ошибки для некорректного пароля. Минимальный пароль — шесть символов.")
@@ -22,11 +30,19 @@ public class PasswordErrorTest extends BaseTest{
 
         mainPage.clickAccountButton();
         loginPage.clickRegisterButton();
-        registerPage.inputName(faker.name().firstName());
-        registerPage.inputEmail(faker.internet().emailAddress());
-        registerPage.inputPassword(faker.internet().password(3, 5));
+        registerPage.inputName("Name");
+        registerPage.inputEmail(user.getEmail());
+        registerPage.inputPassword("123");
         registerPage.clickFinallyRegisterButton();
-        registerPage.checkShortPasswordError();
+        boolean isDisplayed = registerPage.checkShortPasswordError();
+
+        if(isDisplayed){
+        }
+        else{
+            response =  userClient.loginUser(user);
+            accessToken = response.extract().path("accessToken");
+            userClient.deleteUser(StringUtils.substringAfter(accessToken, " "));
+        }
     }
 
 }

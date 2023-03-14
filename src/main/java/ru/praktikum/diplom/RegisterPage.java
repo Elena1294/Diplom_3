@@ -40,9 +40,10 @@ public class RegisterPage {
     public void clickFinallyRegisterButton(){//клик на кнопку Регистрация
         driver.findElement(registerButton).click();
     }
-    public void checkShortPasswordError(){ //проверка наличия сообщения об ошибке
+    public boolean checkShortPasswordError(){ //проверка наличия сообщения об ошибке
         String textOfError = driver.findElement(shortPasswordError).getText();
         MatcherAssert.assertThat("Некорректный пароль", textOfError, startsWith("Некорректный пароль"));
+        return true;
     }
     public void clickSignInButton(){
         driver.findElement(signInButton).click();
