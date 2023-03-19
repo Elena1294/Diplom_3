@@ -43,7 +43,7 @@ public class LoginTest extends BaseTest{
 
     @Test
     @DisplayName("Успешный вход через кнопку в форме восстановления пароля")
-    public void LoginThroughTheButtonInThePasswordRecoveryForm(){
+    public void loginThroughTheButtonInThePasswordRecoveryForm(){
         MainPage mainPage = new MainPage(driver);
         LoginPage loginPage = new LoginPage(driver);
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);

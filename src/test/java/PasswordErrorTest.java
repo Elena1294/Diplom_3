@@ -8,22 +8,19 @@ import org.junit.Before;
 import org.junit.Test;
 import ru.praktikum.diplom.*;
 
+import static org.apache.http.HttpStatus.SC_OK;
 
 
-public class PasswordErrorTest extends BaseTest{
-    private User user;
-    private UserClient userClient;
+public class PasswordErrorTest extends BaseTest {
+    User user = new User ("helena@mail.ru","123");
+    UserClient userClient = new UserClient();
     private ValidatableResponse response;
     String accessToken;
-    @Before
-    public void setUp() {
-        user = User.getRandomUser();
-        UserClient userClient = new UserClient();
-    }
 
     @Test
     @DisplayName("Отображение ошибки для некорректного пароля. Минимальный пароль — шесть символов.")
-    public void shortPasswordError(){
+    public void shortPasswordError() {
+
         MainPage mainPage = new MainPage(driver);
         LoginPage loginPage = new LoginPage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
@@ -32,17 +29,24 @@ public class PasswordErrorTest extends BaseTest{
         loginPage.clickRegisterButton();
         registerPage.inputName("Name");
         registerPage.inputEmail(user.getEmail());
-        registerPage.inputPassword("123");
+        registerPage.inputPassword(user.getPassword());
         registerPage.clickFinallyRegisterButton();
-        boolean isDisplayed = registerPage.checkShortPasswordError();
+        registerPage.checkShortPasswordError();
+    }
 
-        if(isDisplayed){
+    @After
+    public void tearDown() {
+        boolean isDisplayed = false;
+        response =  userClient.loginUser(user);
+        int statusCode = response.extract().statusCode();
+        if (statusCode == SC_OK) {
+            isDisplayed = true;
         }
-        else{
-            response =  userClient.loginUser(user);
+        if (isDisplayed) {
             accessToken = response.extract().path("accessToken");
             userClient.deleteUser(StringUtils.substringAfter(accessToken, " "));
         }
-    }
+        driver.quit();
 
+    }
 }
