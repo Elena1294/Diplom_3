@@ -6,20 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9eb7267-c745-4006-96ae-bccd667d3e1d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/ForgotPasswordPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/ForgotPasswordPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/ProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/ProfilePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/RegisterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/URLS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/URLS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/UserClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AccountLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AccountLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/NavigationInMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/NavigationInMenuTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PasswordErrorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PasswordErrorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SuccessfulRegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SuccessfulRegistrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ToMainPageFromAccountPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ToMainPageFromAccountPageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

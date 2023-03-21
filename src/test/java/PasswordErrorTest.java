@@ -16,8 +16,7 @@ public class PasswordErrorTest extends BaseTest {
     @Before
     public void setUp() {
         user = User.getRandomUserShortPassword();
-        response = userClient.createUser(user);
-        accessToken = response.extract().path("accessToken");
+        userClient = new UserClient();
     }
 
     @Test
@@ -39,16 +38,20 @@ public class PasswordErrorTest extends BaseTest {
 
     @After
     public void tearDown() {
+        driver.quit();
+
         boolean isDisplayed = false;
-        response =  userClient.loginUser(user);
+
+        response = userClient.loginUser(user);
         int statusCode = response.extract().statusCode();
+
         if (statusCode == SC_OK) {
-            isDisplayed = true;git stat
+            isDisplayed = true;
         }
         if (isDisplayed) {
             accessToken = response.extract().path("accessToken");
             userClient.deleteUser(accessToken);
         }
-        driver.quit();
+
     }
 }
