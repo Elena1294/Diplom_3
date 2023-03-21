@@ -37,12 +37,13 @@ public class AccountLoginTest extends BaseTest {
         loginPage.enterEmailAndPassword(user);
         loginPage.clickSignInButton();
         mainPage.clickAccountButton();
-        new WebDriverWait(driver, Duration.ofSeconds(5))
+        new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(".//p[text()='Конструктор']")));
         profilePage.checkLogoutButton();
     }
-   @After
+
+    @After
     public void clearState() {
-        userClient.deleteUser(StringUtils.substringAfter(accessToken, " "));
+        userClient.deleteUser(accessToken);
     }
 }

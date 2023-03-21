@@ -19,21 +19,24 @@ public class ProfilePage {
 
     private final WebDriver driver;
 
-    public ProfilePage(WebDriver driver){
+    public ProfilePage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void checkLogoutButton(){
+    public void checkLogoutButton() {
         String textOfLogoutButton = driver.findElement(logoutButton).getText();
         MatcherAssert.assertThat(textOfLogoutButton, startsWith("Выход"));
     }
-    public void clickLogoutButton(){
+
+    public void clickLogoutButton() {
         driver.findElement(logoutButton).click();
     }
-    public void clickConstructorButton(){
+
+    public void clickConstructorButton() {
         driver.findElement(constructorButton).click();
     }
-    public void clickLogoButton(){
+
+    public void clickLogoButton() {
         driver.findElement(logoButton).click();
     }
 }

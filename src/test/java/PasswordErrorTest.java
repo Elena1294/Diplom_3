@@ -1,8 +1,5 @@
-
-import com.github.javafaker.Faker;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,10 +9,16 @@ import static org.apache.http.HttpStatus.SC_OK;
 
 
 public class PasswordErrorTest extends BaseTest {
-    User user = new User ("helena@mail.ru","123");
-    UserClient userClient = new UserClient();
+    private User user;
+    private UserClient userClient;
+    private String accessToken;
     private ValidatableResponse response;
-    String accessToken;
+    @Before
+    public void setUp() {
+        user = User.getRandomUserShortPassword();
+        response = userClient.createUser(user);
+        accessToken = response.extract().path("accessToken");
+    }
 
     @Test
     @DisplayName("Отображение ошибки для некорректного пароля. Минимальный пароль — шесть символов.")
@@ -27,7 +30,7 @@ public class PasswordErrorTest extends BaseTest {
 
         mainPage.clickAccountButton();
         loginPage.clickRegisterButton();
-        registerPage.inputName("Name");
+        registerPage.inputName(user.getName());
         registerPage.inputEmail(user.getEmail());
         registerPage.inputPassword(user.getPassword());
         registerPage.clickFinallyRegisterButton();
@@ -40,13 +43,12 @@ public class PasswordErrorTest extends BaseTest {
         response =  userClient.loginUser(user);
         int statusCode = response.extract().statusCode();
         if (statusCode == SC_OK) {
-            isDisplayed = true;
+            isDisplayed = true;git stat
         }
         if (isDisplayed) {
             accessToken = response.extract().path("accessToken");
-            userClient.deleteUser(StringUtils.substringAfter(accessToken, " "));
+            userClient.deleteUser(accessToken);
         }
         driver.quit();
-
     }
 }

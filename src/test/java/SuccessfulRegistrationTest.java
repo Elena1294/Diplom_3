@@ -1,10 +1,10 @@
-import io.restassured.response.ValidatableResponse;
-import org.junit.Test;
 import com.github.javafaker.Faker;
 import io.qameta.allure.junit4.DisplayName;
+import io.restassured.response.ValidatableResponse;
+import org.junit.Test;
 import ru.praktikum.diplom.*;
 
-public class SuccessfulRegistrationTest extends BaseTest{
+public class SuccessfulRegistrationTest extends BaseTest {
 
     UserClient client = new UserClient();
     Faker faker = new Faker();
@@ -14,7 +14,7 @@ public class SuccessfulRegistrationTest extends BaseTest{
 
     @Test
     @DisplayName("Успешная регистрация")
-    public void successfulRegistration(){
+    public void successfulRegistration() {
         MainPage mainPage = new MainPage(driver);
         LoginPage loginPage = new LoginPage(driver);
         RegisterPage registerPage = new RegisterPage(driver);

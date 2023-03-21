@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static org.hamcrest.core.StringStartsWith.startsWith;
+
 public class LoginPage {
     private final By registerButton = //маленькая кнопка Зарегистрироваться внизу страницы
             By.xpath(".//a[(@class = 'Auth_link__1fOlj' and text()= 'Зарегистрироваться')]");
@@ -19,25 +20,29 @@ public class LoginPage {
 
     private final WebDriver driver;
 
-    public LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void clickRegisterButton() { //клик на кнопку Зарегистрироваться
         driver.findElement(registerButton).click();
     }
-    public void checkRegistrationIsSuccessfully(){ //проверка на наличие кнопки восстановления пароля
+
+    public void checkRegistrationIsSuccessfully() { //проверка на наличие кнопки восстановления пароля
         String textOfRestorePasswordButton = driver.findElement(restorePasswordButton).getText();
         MatcherAssert.assertThat(textOfRestorePasswordButton, startsWith("Восстановить пароль"));
     }
-    public void enterEmailAndPassword(User user){ //ввести почту и пароль в окне авторизации
+
+    public void enterEmailAndPassword(User user) { //ввести почту и пароль в окне авторизации
         driver.findElement(emailField).sendKeys(user.getEmail());
         driver.findElement(passwordField).sendKeys(user.getPassword());
     }
-    public void clickSignInButton(){ // клик на кнопку Войти
+
+    public void clickSignInButton() { // клик на кнопку Войти
         driver.findElement(signInButton).click();
     }
-    public void clickRestorePasswordButton(){ //клик на кнопку Восстановить пароль
+
+    public void clickRestorePasswordButton() { //клик на кнопку Восстановить пароль
         driver.findElement(restorePasswordButton).click();
     }
 }

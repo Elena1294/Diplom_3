@@ -14,6 +14,7 @@ public class NavigationInMenuTest extends BaseTest {
         mainPage.checkGoToTheBunsSection();
 
     }
+
     @Test
     @DisplayName("Работоспособность перехода к разделу: «Соусы»")
     public void navigationThroughMenuSauces() {
@@ -23,9 +24,10 @@ public class NavigationInMenuTest extends BaseTest {
         mainPage.checkGoToTheSaucesSection();
 
     }
+
     @Test
     @DisplayName("Работоспособность перехода к разделу: «Начинки».")
-    public void navigationThroughMenuFillings () {
+    public void navigationThroughMenuFillings() {
         MainPage mainPage = new MainPage(driver);
 
         mainPage.clickFillingsButton();

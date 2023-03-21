@@ -1,6 +1,5 @@
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +24,7 @@ public class ToMainPageFromAccountPageTest extends BaseTest{
     }
 
     @Test
-    @DisplayName("Проверь переход из личного кабинета в конструктор по клику на логотип Stellar Burgers")
+    @DisplayName("Переход из личного кабинета в конструктор по клику на логотип Stellar Burgers")
     public void toMainPageFromAccountPageWithLogoButton(){
         MainPage mainPage = new MainPage(driver);
         ProfilePage profilePage = new ProfilePage(driver);
@@ -56,6 +55,11 @@ public class ToMainPageFromAccountPageTest extends BaseTest{
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//p[text()='Конструктор']")));
         profilePage.clickConstructorButton();
         mainPage.checkOrderButton();
+    }
+
+    @After
+    public void clearState() {
+        userClient.deleteUser(accessToken);
     }
 
 }

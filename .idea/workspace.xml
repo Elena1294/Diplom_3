@@ -6,11 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="d9eb7267-c745-4006-96ae-bccd667d3e1d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/ForgotPasswordPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/ForgotPasswordPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/ProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/ProfilePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/RegisterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/URLS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/URLS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/UserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AccountLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AccountLoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/NavigationInMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/NavigationInMenuTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PasswordErrorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PasswordErrorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SuccessfulRegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SuccessfulRegistrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ToMainPageFromAccountPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ToMainPageFromAccountPageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Program Files/Git/Diplom_2",
+    "last_opened_file_path": "C:/Program Files/Git/Diplom_3",
     "settings.editor.selected.configurable": "File.Encoding"
   }
 }]]></component>
@@ -56,10 +65,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NavigationInMenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoginTest" />
+      <option name="MAIN_CLASS_NAME" value="NavigationInMenuTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -74,12 +83,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SuccessfulRegistrationTest.successfulRegistration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SuccessfulRegistrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_3" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SuccessfulRegistrationTest" />
-      <option name="METHOD_NAME" value="successfulRegistration" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -97,9 +105,9 @@
       <list>
         <item itemvalue="JUnit.PasswordErrorTest" />
         <item itemvalue="JUnit.ToMainPageFromAccountPageTest" />
-        <item itemvalue="JUnit.SuccessfulRegistrationTest.successfulRegistration" />
-        <item itemvalue="JUnit.LoginTest" />
         <item itemvalue="JUnit.AccountLoginTest.accountLogin" />
+        <item itemvalue="JUnit.SuccessfulRegistrationTest" />
+        <item itemvalue="JUnit.NavigationInMenuTest" />
       </list>
     </recent_temporary>
   </component>
@@ -113,5 +121,16 @@
       <updated>1678100076581</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/praktikum/diplom/ProfilePage.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,6 +1,5 @@
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -72,6 +71,7 @@ public class LoginTest extends BaseTest{
     }
     @After
     public void clearState() {
-        userClient.deleteUser(StringUtils.substringAfter(accessToken, " "));
+        userClient.deleteUser(accessToken);
+
     }
 }

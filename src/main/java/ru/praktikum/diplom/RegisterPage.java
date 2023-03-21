@@ -23,28 +23,33 @@ public class RegisterPage {
 
     private final WebDriver driver;
 
-    public RegisterPage(WebDriver driver){
+    public RegisterPage(WebDriver driver) {
 
         this.driver = driver;
     }
 
-    public void inputName(String text){ //ввод имени в поле имени
+    public void inputName(String text) { //ввод имени в поле имени
         driver.findElement(nameField).sendKeys(text);
     }
-    public void inputEmail(String text){//ввод email в поле email
+
+    public void inputEmail(String text) {//ввод email в поле email
         driver.findElement(emailField).sendKeys(text);
     }
-    public void inputPassword(String text){//ввод пароля в поле пароля
+
+    public void inputPassword(String text) {//ввод пароля в поле пароля
         driver.findElement(passwordField).sendKeys(text);
     }
-    public void clickFinallyRegisterButton(){//клик на кнопку Регистрация
+
+    public void clickFinallyRegisterButton() {//клик на кнопку Регистрация
         driver.findElement(registerButton).click();
     }
-    public void checkShortPasswordError(){ //проверка наличия сообщения об ошибке
+
+    public void checkShortPasswordError() { //проверка наличия сообщения об ошибке
         String textOfError = driver.findElement(shortPasswordError).getText();
         MatcherAssert.assertThat("Некорректный пароль", textOfError, startsWith("Некорректный пароль"));
     }
-    public void clickSignInButton(){
+
+    public void clickSignInButton() {
         driver.findElement(signInButton).click();
     }
 }

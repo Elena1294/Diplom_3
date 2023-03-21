@@ -3,6 +3,7 @@ package ru.praktikum.diplom;
 import io.qameta.allure.Step;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
+
 import static io.restassured.RestAssured.given;
 import static java.net.HttpURLConnection.HTTP_ACCEPTED;
 import static java.net.HttpURLConnection.HTTP_OK;
@@ -34,7 +35,7 @@ public class UserClient {
     }
 
     @Step("Delete user")
-    public ValidatableResponse deleteUser(String accessToken){
+    public ValidatableResponse deleteUser(String accessToken) {
         return given().log().all()
                 .contentType(ContentType.JSON)
                 .baseUri(BASE_URI)
@@ -45,7 +46,7 @@ public class UserClient {
     }
 
     @Step("Get token")
-    public String getToken(ValidatableResponse response){
+    public String getToken(ValidatableResponse response) {
         return response.assertThat()
                 .body("success", equalTo(true))
                 .statusCode(HTTP_OK)
@@ -55,7 +56,7 @@ public class UserClient {
     }
 
     @Step("User successfully deleted response")
-    public void userDeleted(ValidatableResponse response){
+    public void userDeleted(ValidatableResponse response) {
         response.assertThat()
                 .body("message", equalTo("User successfully removed"))
                 .statusCode(HTTP_ACCEPTED);
